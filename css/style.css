@@ -371,6 +371,12 @@ section, footer.kontakt {
 .kompetenz-card h3 { font-size: 1.15rem; margin: 0.5rem 0 0.6rem; }
 .kompetenz-card p { font-size: 0.92rem; opacity: 0.85; }
 
+/* ---------- SKILLS ---------- */
+.skills { background: var(--purple); color: var(--paper); }
+.skills__lead { font-size: clamp(1.05rem, 2vw, 1.3rem); font-weight: 500; margin-bottom: clamp(2rem, 5vw, 3rem); opacity: 0.9; }
+.skills__cloud { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.tag--lg { font-size: 0.95rem; padding: 0.6rem 1.1rem; }
+
 /* ---------- KARRIERE ---------- */
 .karriere {
   background: var(--ink);
@@ -414,12 +420,15 @@ section, footer.kontakt {
 @media (max-width: 800px) { .logo-wall { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px) { .logo-wall { grid-template-columns: 1fr; } }
 .logo-tile {
+  display: block;
   background: var(--paper);
   color: var(--ink);
   border-radius: 1rem;
   padding: 1.5rem;
   text-align: center;
+  transition: transform 0.15s ease;
 }
+a.logo-tile:hover, .logo-tile a:hover { transform: translateY(-2px); }
 .logo-tile__mark {
   display: block;
   font-family: var(--display);
@@ -429,6 +438,13 @@ section, footer.kontakt {
   margin-bottom: 0.75rem;
 }
 .logo-tile__desc { font-size: 0.85rem; opacity: 0.8; }
+.logo-tile__sub {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: underline;
+}
 
 .extras {
   margin-top: 3rem;
