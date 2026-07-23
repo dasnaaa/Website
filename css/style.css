@@ -228,6 +228,7 @@ section, footer.kontakt {
 .btn--primary { background: var(--pink); color: var(--paper); }
 .btn--ghost { background: var(--paper); color: var(--ink); }
 .btn--youtube { background: #FF0033; color: var(--paper); }
+.btn--spotify { background: #1DB954; color: var(--ink); }
 
 .hero__shapes { position: absolute; inset: 0; pointer-events: none; z-index: -1; }
 .shape { position: absolute; border: 4px solid var(--ink); }
@@ -407,6 +408,7 @@ section, footer.kontakt {
   padding: clamp(1.5rem, 4vw, 3rem);
   box-shadow: 12px 12px 0 var(--ink);
 }
+.ausschuss__panel + .ausschuss__panel { margin-top: clamp(2rem, 5vw, 3rem); }
 @media (max-width: 800px) {
   .ausschuss__panel { grid-template-columns: 1fr; text-align: center; }
 }
@@ -414,33 +416,15 @@ section, footer.kontakt {
 .ausschuss__channel { font-weight: 700; opacity: 0.7; }
 .ausschuss__handle { font-family: var(--display); font-size: clamp(1.4rem, 3vw, 2rem); margin: 0.3rem 0 1.25rem; }
 
-.episode-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-@media (max-width: 560px) { .episode-grid { grid-template-columns: 1fr; } }
-
-.episode-card {
-  aspect-ratio: 4 / 3;
+.embed-frame {
   border: 3px solid var(--ink);
   border-radius: 1rem;
-  background: var(--blue);
-  color: var(--paper);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  font-weight: 700;
-  text-align: center;
-  transition: transform 0.15s ease;
+  overflow: hidden;
+  background: var(--ink);
 }
-.episode-card:hover { transform: translateY(-4px) rotate(-1deg); }
-.episode-card--alt { background: var(--yellow); color: var(--ink); }
-.episode-card--alt2 { background: var(--green); color: var(--ink); }
-.episode-card__play { font-size: 1.75rem; }
-.episode-card__label { font-size: 0.85rem; padding: 0 0.5rem; }
+.embed-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+.embed-frame--video { aspect-ratio: 16 / 9; }
+.embed-frame--audio { height: 232px; }
 
 .ausschuss__embed-note { margin-top: 1rem; font-size: 0.9rem; opacity: 0.75; }
 .ausschuss__embed-note a { text-decoration: underline; font-weight: 700; }
