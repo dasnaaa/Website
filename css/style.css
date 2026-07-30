@@ -139,10 +139,10 @@ section, footer.kontakt {
     flex-direction: column;
     gap: 0;
     max-height: 0;
-    overflow: hidden;
+    overflow-y: auto;
     transition: max-height 0.3s ease;
   }
-  .nav__links.open { max-height: 300px; }
+  .nav__links.open { max-height: calc(100vh - 68px); }
   .nav__links a { padding: 1rem clamp(1.25rem, 6vw, 5rem); border-top: 1px solid rgba(0,0,0,0.08); }
   .nav__burger { display: flex; }
 }
@@ -680,7 +680,12 @@ a.logo-tile:hover, .logo-tile a:hover { transform: translateY(-2px); }
 .blog-card p { opacity: 0.85; }
 .blog-empty { opacity: 0.7; font-weight: 600; }
 
-.blog-post { background: var(--paper); max-width: 720px; }
+.blog-post {
+  background: var(--paper);
+  max-width: 760px;
+  margin: 0 auto;
+  padding: clamp(3rem, 8vw, 7rem) clamp(1.25rem, 6vw, 5rem);
+}
 .blog-post__back { display: inline-block; margin-bottom: 1.5rem; font-weight: 700; text-decoration: underline; }
 .blog-post__date {
   display: block;
